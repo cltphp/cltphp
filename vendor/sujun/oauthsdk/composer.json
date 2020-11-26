@@ -1,0 +1,25 @@
+{
+    "name": "sujun/oauthsdk",
+    "description":"第三方登录",
+    "license": "MIT",
+    "keywords":["QQ登录","微信登录","微博登录"],
+    "version": "v1.0.1",
+    "authors":[
+        {
+            "name":"sujun",
+            "email":"351699382@qq.com",
+            "homepage":"http://www.yishuoshe.com"
+        }
+    ],
+    "require":
+    {
+        "php":">=5.6.0"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "OauthSDK\\": "src/"
+        }
+    }
+}
