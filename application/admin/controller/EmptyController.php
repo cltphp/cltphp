@@ -96,7 +96,6 @@ class EmptyController extends Common{
     }
     function update(){
         $request = Request::instance();
-
         $controllerName = $request->controller();
         $model = $this->dao;
         $fields = $this->fields;
@@ -263,9 +262,9 @@ class EmptyController extends Common{
                         unset($post[$key]);
                     }
                 }elseif($fields[$key]['type']=='editor'){
-                    $post[$key] =htmlspecialchars_decode($post['content']);
-                    if(isset($post['description']) && $post['description'] == '' && isset($post['content'])) {
-                        $content = stripslashes($post['content']);
+                    $post[$key] =htmlspecialchars_decode($fields[$key]['field']);
+                    if(isset($post['description']) && $post['description'] == '' && isset($fields[$key]['field'])) {
+                        $content = stripslashes($fields[$key]['field']);
                         $description_length = 120;
                         $post['description'] = str_cut(str_replace(array("\r\n","\t",'[page]','[/page]','&ldquo;','&rdquo;'), '', strip_tags($content)),$description_length);
                         $post['description'] = addslashes($post['description']);
