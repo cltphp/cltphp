@@ -24,7 +24,7 @@ class Login extends Controller
             $data = input('post.');
             $admin = new Admin();
             $return = $admin->login($data,$this->system['code']);
-            return ['code' => $return['code'], 'msg' => $return['msg']];
+            return ['code' => $return['code'],'status'=>1, 'msg' => $return['msg']];
         }else{
             return $this->fetch();
         }
