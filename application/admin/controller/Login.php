@@ -36,7 +36,7 @@ class Login extends Controller
             // 验证码位数
             'length'      =>    4,
             // 关闭验证码杂点
-            'useNoise'    =>    false,
+            'useNoise'    =>    true,
             'bg'          =>    [255,255,255],
         ];
         $captcha = new Captcha($config);
